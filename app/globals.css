@@ -1,0 +1,74 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink: #0a1b3d;
+  --color-navy: #0f2e64;
+  --color-navy-soft: #1c4487;
+  --color-ice: #f4f7fc;
+  --color-line: #e2eaf6;
+  --color-royal: #2563eb;
+  --color-gold: #f5b01b;
+  --color-muted: #52627e;
+
+  --font-display: var(--font-sora), ui-sans-serif, system-ui, sans-serif;
+  --font-body: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #ffffff;
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Trading-card aspect ratio: real TCG cards are 63mm x 88mm */
+.card-ratio {
+  aspect-ratio: 63 / 88;
+}
+
+/* Foil sheen — the signature. A soft holographic sweep on hover. */
+.foil {
+  overflow: hidden;
+}
+.foil:not(.absolute):not(.fixed) {
+  position: relative;
+}
+.foil::after {
+  content: "";
+  position: absolute;
+  inset: -60%;
+  background: linear-gradient(
+    115deg,
+    transparent 38%,
+    rgba(137, 180, 255, 0.16) 45%,
+    rgba(255, 255, 255, 0.28) 50%,
+    rgba(178, 137, 255, 0.14) 55%,
+    transparent 62%
+  );
+  transform: translateX(-70%) rotate(0.001deg);
+  transition: transform 0.9s cubic-bezier(0.2, 0.6, 0.2, 1);
+  pointer-events: none;
+}
+.foil:hover::after,
+.foil:focus-visible::after {
+  transform: translateX(70%) rotate(0.001deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .foil::after {
+    display: none;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
