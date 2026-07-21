@@ -9,9 +9,7 @@ export default function Footer() {
         <div className="flex flex-col gap-10 md:flex-row md:items-start md:justify-between">
           <div className="max-w-sm">
             <div className="flex items-center gap-3">
-              <span className="inline-flex rounded-xl bg-white p-1">
-                <Logo className="h-8 w-8" />
-              </span>
+              <Logo className="h-9 w-9" />
               <span className="font-display text-lg font-bold">The Bulk Box</span>
             </div>
             <p className="mt-4 text-sm leading-relaxed text-white/60">
