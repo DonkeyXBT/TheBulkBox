@@ -5,7 +5,7 @@ export default function Logo({ className = "h-8 w-8" }: { className?: string }) 
       src="/mark.png"
       alt=""
       aria-hidden="true"
-      className={`${className} rounded-[22%] object-cover`}
+      className={`${className} object-contain`}
     />
   );
 }
