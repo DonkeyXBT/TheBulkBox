@@ -49,6 +49,7 @@ export const socials = [
 ] as const;
 
 // ── Games we collect ────────────────────────────────────────────
+// Card images are hotlinked from official / community card databases.
 export const games = [
   {
     name: "Pokémon",
@@ -57,6 +58,8 @@ export const games = [
     note: "From vintage WOTC to the newest sets — the heart of the community.",
     from: "#fde047",
     to: "#3b82f6",
+    card: "https://images.pokemontcg.io/base1/58_hires.png",
+    cardName: "Pikachu — Base Set",
   },
   {
     name: "One Piece",
@@ -65,6 +68,8 @@ export const games = [
     note: "Leaders, alt arts and a market that never sits still.",
     from: "#ef4444",
     to: "#0f2e64",
+    card: "https://static.dotgg.gg/onepiece/card/ST01-001.webp",
+    cardName: "Monkey.D.Luffy — ST01",
   },
   {
     name: "Lorcana",
@@ -73,6 +78,8 @@ export const games = [
     note: "Disney's TCG — enchanted rares and a friendly play scene.",
     from: "#a78bfa",
     to: "#f5b01b",
+    card: "https://cards.lorcast.io/card/digital/large/crd_7a1dc3b9b23041a78c7e1b46ff4a2f2c.avif",
+    cardName: "Buzz Lightyear — Space Ranger",
   },
   {
     name: "Dragon Ball",
@@ -81,6 +88,8 @@ export const games = [
     note: "Fusion World and Masters — SCRs and god rares welcome.",
     from: "#fb923c",
     to: "#dc2626",
+    card: "https://www.dbs-cardgame.com/fw/images/cards/card/en/FB01-001_f.webp",
+    cardName: "Son Goku — FB01 Leader",
   },
 ] as const;
 

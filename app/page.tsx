@@ -45,23 +45,19 @@ export default function Home() {
               return (
                 <div
                   key={g.name}
-                  className="foil card-ratio absolute left-1/2 top-1/2 w-32 rounded-2xl border border-white/20 shadow-2xl shadow-navy/25 transition-transform duration-500 hover:z-10 hover:scale-105 md:w-36"
+                  className="foil card-ratio absolute left-1/2 top-1/2 w-32 rounded-xl shadow-2xl shadow-navy/30 transition-transform duration-500 hover:z-10 hover:scale-105 md:w-36"
                   style={{
                     background: `linear-gradient(160deg, ${g.from}, ${g.to} 80%)`,
                     transform: `translate(-50%, -50%) translateX(${(i - 1.5) * 72}px) translateY(${lift}px) rotate(${rot}deg)`,
                     zIndex: i < 2 ? i : 3 - i,
                   }}
                 >
-                  <div className="flex h-full flex-col justify-between p-4">
-                    <div className="rounded-lg bg-white/90 px-2.5 py-1.5">
-                      <p className="font-display text-[11px] font-bold leading-tight text-ink">
-                        {g.name}
-                      </p>
-                    </div>
-                    <div className="self-end rounded-md bg-ink/40 px-2 py-1 font-display text-[10px] font-semibold text-white backdrop-blur-sm">
-                      est. {g.since}
-                    </div>
-                  </div>
+                  <img
+                    src={g.card}
+                    alt=""
+                    className="h-full w-full rounded-xl object-cover"
+                    loading={i < 2 ? "eager" : "lazy"}
+                  />
                 </div>
               );
             })}
@@ -82,23 +78,35 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="mt-12 grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-6">
+          <div className="mt-12 grid grid-cols-2 gap-6 md:grid-cols-4 md:gap-8">
             {games.map((g) => (
-              <article
-                key={g.name}
-                className="foil card-ratio group flex flex-col justify-between rounded-2xl p-5 text-white shadow-lg shadow-navy/15 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:shadow-navy/25"
-                style={{
-                  background: `linear-gradient(165deg, ${g.from}, ${g.to} 85%)`,
-                }}
-              >
-                <span className="self-start rounded-full bg-white/90 px-3 py-1 font-display text-[11px] font-bold uppercase tracking-wide text-ink">
-                  {g.tag}
-                </span>
-                <div>
-                  <h3 className="font-display text-xl font-bold md:text-2xl">
-                    {g.name}
-                  </h3>
-                  <p className="mt-2 hidden text-sm leading-snug text-white/85 md:block">
+              <article key={g.name} className="group">
+                <div
+                  className="foil card-ratio rounded-xl p-1.5 shadow-lg shadow-navy/15 transition-all duration-300 group-hover:-translate-y-1.5 group-hover:shadow-xl group-hover:shadow-navy/25"
+                  style={{
+                    background: `linear-gradient(165deg, ${g.from}, ${g.to} 85%)`,
+                  }}
+                >
+                  <img
+                    src={g.card}
+                    alt={`${g.cardName} card`}
+                    className="h-full w-full rounded-lg object-cover"
+                    loading="lazy"
+                  />
+                </div>
+                <div className="mt-4">
+                  <div className="flex items-center gap-2">
+                    <h3 className="font-display text-lg font-bold text-ink">
+                      {g.name}
+                    </h3>
+                    <span className="rounded-full bg-white px-2.5 py-0.5 font-display text-[10px] font-semibold uppercase tracking-wide text-navy">
+                      {g.tag}
+                    </span>
+                  </div>
+                  <p className="mt-0.5 text-xs font-medium text-royal">
+                    {g.cardName}
+                  </p>
+                  <p className="mt-2 hidden text-sm leading-snug text-muted md:block">
                     {g.note}
                   </p>
                 </div>
