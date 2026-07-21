@@ -40,7 +40,7 @@ export default function Home() {
           {/* The community logo */}
           <div className="mx-auto w-full max-w-xs md:max-w-sm" aria-hidden="true">
             <img
-              src="/logo-transparent.png"
+              src="/images/logo-transparent.png"
               alt=""
               className="float-slow w-full drop-shadow-[0_24px_40px_rgba(10,27,61,0.18)]"
               fetchPriority="high"

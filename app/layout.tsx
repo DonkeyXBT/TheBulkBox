@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     title: "The Bulk Box — Trading Card Community",
     description:
       "Pokémon, One Piece, Lorcana and Dragon Ball. Trade, chat and meet up at fairs and events.",
-    images: [{ url: "/logo.png", width: 873, height: 1024 }],
+    images: [{ url: "/images/logo.png", width: 864, height: 1024 }],
   },
 };
 

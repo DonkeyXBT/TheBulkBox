@@ -2,7 +2,7 @@
 export default function Logo({ className = "h-8 w-8" }: { className?: string }) {
   return (
     <img
-      src="/mark.png"
+      src="/images/mark.png"
       alt=""
       aria-hidden="true"
       className={`${className} object-contain`}

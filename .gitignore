@@ -9,4 +9,4 @@ next-env.d.ts
 .vercel
 
 # raster-in-svg wrapper, no vector data — kept locally only
-the_bulk_box_logo_exact.svg
+images/the_bulk_box_logo_exact.svg
