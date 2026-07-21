@@ -23,7 +23,7 @@ export default function Nav() {
           className="flex items-center gap-2.5 rounded-lg text-ink focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-royal"
           onClick={() => setOpen(false)}
         >
-          <Logo className="h-8 w-8 text-navy" />
+          <Logo className="h-9 w-9" />
           <span className="font-display text-lg font-bold tracking-tight">
             The Bulk Box
           </span>

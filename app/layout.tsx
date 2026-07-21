@@ -18,12 +18,19 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://the-bulk-box.vercel.app"),
   title: {
     default: "The Bulk Box — Trading Card Community",
     template: "%s — The Bulk Box",
   },
   description:
     "A trading card community for Pokémon, One Piece, Lorcana and Dragon Ball collectors. Trade, chat and meet up at fairs and events.",
+  openGraph: {
+    title: "The Bulk Box — Trading Card Community",
+    description:
+      "Pokémon, One Piece, Lorcana and Dragon Ball. Trade, chat and meet up at fairs and events.",
+    images: [{ url: "/logo.png", width: 873, height: 1024 }],
+  },
 };
 
 export default function RootLayout({

@@ -8,8 +8,10 @@ export default function Footer() {
       <div className="mx-auto max-w-6xl px-5 py-14">
         <div className="flex flex-col gap-10 md:flex-row md:items-start md:justify-between">
           <div className="max-w-sm">
-            <div className="flex items-center gap-2.5">
-              <Logo className="h-8 w-8 text-white" />
+            <div className="flex items-center gap-3">
+              <span className="inline-flex rounded-xl bg-white p-1">
+                <Logo className="h-8 w-8" />
+              </span>
               <span className="font-display text-lg font-bold">The Bulk Box</span>
             </div>
             <p className="mt-4 text-sm leading-relaxed text-white/60">
