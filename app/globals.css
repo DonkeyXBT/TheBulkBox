@@ -58,7 +58,25 @@ body {
   transform: translateX(70%) rotate(0.001deg);
 }
 
+/* Gentle ambient float for the hero logo */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+.float-slow {
+  animation: float 5s ease-in-out infinite;
+}
+
 @media (prefers-reduced-motion: reduce) {
+  .float-slow {
+    animation: none;
+  }
+
   html {
     scroll-behavior: auto;
   }

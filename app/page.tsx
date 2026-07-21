@@ -37,30 +37,14 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Fanned cards — real 63:88 card proportions */}
-          <div className="relative mx-auto h-72 w-full max-w-sm md:h-80" aria-hidden="true">
-            {games.map((g, i) => {
-              const rot = (i - 1.5) * 10;
-              const lift = Math.abs(i - 1.5) * 18;
-              return (
-                <div
-                  key={g.name}
-                  className="foil card-ratio absolute left-1/2 top-1/2 w-32 rounded-xl shadow-2xl shadow-navy/30 transition-transform duration-500 hover:z-10 hover:scale-105 md:w-36"
-                  style={{
-                    background: `linear-gradient(160deg, ${g.from}, ${g.to} 80%)`,
-                    transform: `translate(-50%, -50%) translateX(${(i - 1.5) * 72}px) translateY(${lift}px) rotate(${rot}deg)`,
-                    zIndex: i < 2 ? i : 3 - i,
-                  }}
-                >
-                  <img
-                    src={g.card}
-                    alt=""
-                    className="h-full w-full rounded-xl object-cover"
-                    loading={i < 2 ? "eager" : "lazy"}
-                  />
-                </div>
-              );
-            })}
+          {/* The community logo */}
+          <div className="mx-auto w-full max-w-xs md:max-w-sm" aria-hidden="true">
+            <img
+              src="/logo-transparent.png"
+              alt=""
+              className="float-slow w-full drop-shadow-[0_24px_40px_rgba(10,27,61,0.18)]"
+              fetchPriority="high"
+            />
           </div>
         </div>
       </section>

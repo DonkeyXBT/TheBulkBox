@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import CardFan from "@/components/card-fan";
 import { socials } from "@/lib/data";
 
 export const metadata: Metadata = {
@@ -10,19 +11,22 @@ export const metadata: Metadata = {
 export default function SocialsPage() {
   return (
     <div className="mx-auto max-w-6xl px-5 py-16 md:py-24">
-      <div className="max-w-xl">
-        <p className="font-display text-xs font-semibold uppercase tracking-[0.2em] text-royal">
-          Socials
-        </p>
-        <h1 className="mt-4 font-display text-4xl font-extrabold tracking-tight text-ink md:text-5xl">
-          One community,
-          <br />
-          five places to find it.
-        </h1>
-        <p className="mt-5 text-lg leading-relaxed text-muted">
-          The group chat is where it happens — everything else is the highlight
-          reel. Pick your platform.
-        </p>
+      <div className="grid items-center gap-12 md:grid-cols-[1.1fr_1fr]">
+        <div>
+          <p className="font-display text-xs font-semibold uppercase tracking-[0.2em] text-royal">
+            Socials
+          </p>
+          <h1 className="mt-4 font-display text-4xl font-extrabold tracking-tight text-ink md:text-5xl">
+            One community,
+            <br />
+            five places to find it.
+          </h1>
+          <p className="mt-5 max-w-xl text-lg leading-relaxed text-muted">
+            The group chat is where it happens — everything else is the
+            highlight reel. Pick your platform.
+          </p>
+        </div>
+        <CardFan className="mx-auto hidden h-72 w-full max-w-sm md:block md:h-80" />
       </div>
 
       <div className="mt-14 grid gap-5 md:grid-cols-2">
@@ -35,6 +39,7 @@ export default function SocialsPage() {
             className={`foil group relative flex flex-col justify-between overflow-hidden rounded-3xl border border-line bg-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-navy/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-royal ${
               i === 0 ? "md:col-span-2 md:flex-row md:items-center md:gap-10" : ""
             }`}
+            style={{ borderTop: `3px solid ${s.accent}` }}
           >
             <div>
               <div className="flex items-center gap-3">
